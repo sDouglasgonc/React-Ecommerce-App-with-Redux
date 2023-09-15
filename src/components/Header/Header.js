@@ -1,8 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {NavLink} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
-const Header = ({cartLength}) => {
+const Header = ({ cartLength }) => {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -12,7 +12,7 @@ const Header = ({cartLength}) => {
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <NavLink className="nav-link" to={"/cart"}><i className="fa fa-shopping-cart mr-2"
-                                                                          aria-hidden="true" />Cart {cartLength ? `(${cartLength})`: ''}</NavLink>
+                                aria-hidden="true" />Cart {cartLength ? `(${cartLength})` : ''}</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -23,9 +23,9 @@ const Header = ({cartLength}) => {
 
 
 const mapStateToProps = (state) => {
-  return {
-      cartLength: state.shop.cart.length
-  }
+    return {
+        cartLength: state.shop.cart.length
+    }
 };
 
 export default connect(mapStateToProps, null)(Header);
