@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {cumulativeOffSet} from "../../utilities/cumulativeOffset"
+import React, { useState } from 'react';
+import { cumulativeOffSet } from "../../utilities/cumulativeOffset"
 import './ProductSlider.scss';
 
 const ProductSlider = (
@@ -18,7 +18,7 @@ const ProductSlider = (
         console.dir(imageRef.current);
 
         const part = imageRef.current.clientWidth / images.length;
-        console.log(Math.ceil(currentX / part) - 1);
+        //console.log(Math.ceil(currentX / part) - 1);
 
         let imgIndex = Math.ceil(currentX / part) - 1;
         if (imgIndex < 0) {
@@ -47,18 +47,20 @@ const ProductSlider = (
         <aside className="col-sm-5 border-right">
             <article className="gallery-wrap">
                 <div className="img-big-wrap">
-                    <div style={{padding: '2rem'}}><a href="#"><img
+                    <div style={{ padding: '2rem' }}><a href="#"><img
                         ref={imageRef}
                         onMouseMove={handleImageChange}
                         onMouseOut={handleMouseOut}
                         src={img}
-                        style={{width: '100%',
-                                height: '100%'}}
+                        style={{
+                            width: '100%',
+                            height: '100%'
+                        }}
                     /></a></div>
                 </div>
                 <div className="img-small-wrap">
-                    {images.map((img , i ) => (
-                        <div className="item-gallery" onClick={() => {changeImage(i)}}><img src={img}/></div>
+                    {images.map((img, i) => (
+                        <div className="item-gallery" onClick={() => { changeImage(i) }}><img src={img} /></div>
                     ))}
                 </div>
             </article>
